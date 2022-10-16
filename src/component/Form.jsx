@@ -81,7 +81,7 @@ console.log(language)
           }}
         >
           {events.map((item, index) => (
-            <ListItem key={item}>
+            <ListItem key={uuidv4()}>
               <Checkbox  onClick={handleClick} onBlur={()=>console.log(formdata)} overlay disableIcon variant="soft" label={item} value={item}/>
             </ListItem>
           ))}
@@ -134,7 +134,7 @@ const Form = () => {
     setDoc(cityRef, formdata).then(async()=>{
     console.log('uploaded')
         // const response= await QRcode.toDataURL(`${cityRef.id}`)
-        const sendqr = await fetch(`https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=http://localhost:3000/user/${cityRef.id}&choe=UTF-8`)
+        const sendqr = await fetch(`https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=https://main--effulgent-horse-1b60e3.netlify.app/user/${cityRef.id}&choe=UTF-8`)
         const QrUrl = sendqr.url
         console.log(QrUrl)
         // setqr(response)

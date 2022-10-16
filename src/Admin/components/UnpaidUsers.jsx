@@ -6,6 +6,7 @@ import{Switch} from '@mui/material'
 import {Typography} from '@mui/material'
 import styled from 'styled-components'
 import UserInfoCard from './UserInfoCard'
+import { uuidv4 } from '@firebase/util'
 const UnPaidUSerMain = styled.div`
 width: 100vw;
 padding: 0  1.5rem;
@@ -77,7 +78,7 @@ function UnPaidUsers() {
 
 {
             paidUsers.map(data=>{
-                return <UserInfoCard data={data} />
+                return <UserInfoCard key={uuidv4()} data={data} />
                 
                 
             })

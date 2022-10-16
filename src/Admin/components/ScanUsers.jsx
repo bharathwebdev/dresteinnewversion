@@ -106,7 +106,7 @@ const onScanfile = ()=>{
         
             
 
-              const res = result?.text.substr(27)
+              const res = result?.text.substr(54)
               console.log(res)
 
          

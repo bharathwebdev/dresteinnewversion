@@ -16,6 +16,11 @@ const Navbar = styled.nav`
     gap: 20px;
     padding-left: 0;
   } 
+  @media screen and (max-width:500px) {
+    top: -80px;
+  } 
+
+
 `;
 
 const SLogo = styled.img`
@@ -119,11 +124,7 @@ const MobileNavHeader = styled.div`
 `;
 
 function Nav() {
-  const navstyle = {
-    "@media (max-width: 500px)": {
-      top: "-80px",
-    },
-  };
+
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
     if (window.scrollY > 30) {
@@ -135,7 +136,7 @@ function Nav() {
   window.addEventListener("scroll", changeNavbarColor);
 
   return (
-    <Navbar className="navbar" style={navstyle}>
+    <Navbar className="navbar" >
       <SLogo src={saveethalogo} />
       <NavHead>
         <NavItem href="#">Home</NavItem>
